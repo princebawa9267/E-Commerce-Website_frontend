@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+
+
+.message-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(50vh);
+}
+
+.message{
+    font-family: var(--asset-font);
+    font-weight: 900;
+    font-size: 6em;
+    color : #4c4c4cbf;
+    text-align: center;
+    user-select: none; /* Prevents text selection */
+    -webkit-user-select: none; /* For Safari */
+    -moz-user-select: none; /* For Firefox */
+    -ms-user-select: none; /* For older Edge */
+}
+
+@media (max-width : 998px) {
+    .message {
+        font-size: 5em;
+    }
+}
+
+@media (max-width: 798px) {
+    .message {
+        font-size: 4em;
+    }
+}
+
+@media (max-width: 448px) {
+    .message {
+        font-size: 3rem;
+    }
+}
