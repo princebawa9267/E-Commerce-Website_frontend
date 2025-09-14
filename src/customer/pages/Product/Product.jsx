@@ -122,12 +122,19 @@ const Product = () => {
                   </FormControl>
                 </div>
                 <Divider />
-                {(product.products.length > 0) ? <section className='products_section grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-5 px-5 justify-center'>
+                {
+                  console.log("I am product " ,product.loading)
+                }
+                {(product.loading) ? <Loader /> : (product.products.length > 0) ? <section className='products_section grid  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-5 px-5 justify-center'>
                   {
                     Array.isArray(product.products) && product.products.map((items) => <ProductCard item={items} />)
                   }
                 </section> : <div className='message-div'><h1 className='message'>No item exist with this filter</h1></div>}
-
+                {product.loading && (
+                  <div className="flex justify-center py-8">
+                    <Loader />
+                  </div>
+                )}
                   {
                     console.log("Total Pages : ", product)
                   }
